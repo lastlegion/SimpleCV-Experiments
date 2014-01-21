@@ -22,9 +22,8 @@ def myfisheye(I,k):
         for j in range(0, I.height):
             FishEye[newXs[i,j],newYs[i,j]] = I[i,j]
     FishEye.show()
-    a = raw_input("test")
-    print newXs
-    print newYs
+    return FishEye
 
 I = SimpleCV.Image("1.jpg")
-myfisheye(I,0.1)
+myfisheye(I,0.1).save("images/Fisheye01.jpg")
+

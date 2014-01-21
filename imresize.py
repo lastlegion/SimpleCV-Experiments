@@ -10,12 +10,7 @@ def myresize(I,M,N):
     x_ratio = float(InpWidth/M)
     y_ratio = float(InpHeight/N)
     Resize = np.zeros((M,N,3))
-    print Resize.shape
-    print InpHeight
-    print InpWidth
-    print x_ratio
-    print y_ratio
-    
+   
     for x in range(0,M):
         for y in range(0,N):
             px = min(math.floor(x*x_ratio), InpWidth-1)
@@ -34,5 +29,5 @@ print sys.argv[3]
 x = SimpleCV.Image((myresize(I,int(sys.argv[2]), int(sys.argv[3]))))
 I.show()
 x.show()
-x.save("resized.jpg")
+x.save("images/resized.jpg")
 wait = input("press any key to exit")

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=latex 2014.1.21)  22 JAN 2014 00:31
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2014.1.21)  22 JAN 2014 02:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -88,7 +88,35 @@ Package typearea Info: These are the values describing the layout:
 \c@figure=\count86
 \c@table=\count87
 \bibindent=\dimen102
-) (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count88
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.def
@@ -103,8 +131,8 @@ Language: english 2005/03/30 v3.3o English support from the babel system
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2008/07/08 v3.8m Babel common definitions
-\babel@savecnt=\count88
-\U@D=\dimen103
+\babel@savecnt=\count89
+\U@D=\dimen105
 )
 \l@british = a dialect from \language\l@english 
 \l@UKenglish = a dialect from \language\l@english 
@@ -123,46 +151,46 @@ Package: amstext 2000/06/29 v2.01
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks15
-\ex@=\dimen104
+\ex@=\dimen106
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d
-\pmbraise@=\dimen105
+\pmbraise@=\dimen107
 )
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
-\inf@bad=\count89
+\inf@bad=\count90
 LaTeX Info: Redefining \frac on input line 211.
-\uproot@=\count90
-\leftroot@=\count91
+\uproot@=\count91
+\leftroot@=\count92
 LaTeX Info: Redefining \overline on input line 307.
-\classnum@=\count92
-\DOTSCASE@=\count93
+\classnum@=\count93
+\DOTSCASE@=\count94
 LaTeX Info: Redefining \ldots on input line 379.
 LaTeX Info: Redefining \dots on input line 382.
 LaTeX Info: Redefining \cdots on input line 467.
 \Mathstrutbox@=\box27
 \strutbox@=\box28
-\big@size=\dimen106
+\big@size=\dimen108
 LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
-\macc@depth=\count94
-\c@MaxMatrixCols=\count95
+\macc@depth=\count95
+\c@MaxMatrixCols=\count96
 \dotsspace@=\muskip10
-\c@parentequation=\count96
-\dspbrk@lvl=\count97
+\c@parentequation=\count97
+\dspbrk@lvl=\count98
 \tag@help=\toks16
-\row@=\count98
-\column@=\count99
-\maxfields@=\count100
+\row@=\count99
+\column@=\count100
+\maxfields@=\count101
 \andhelp@=\toks17
-\eqnshift@=\dimen107
-\alignsep@=\dimen108
-\tagshift@=\dimen109
-\tagwidth@=\dimen110
-\totwidth@=\dimen111
-\lineht@=\dimen112
+\eqnshift@=\dimen109
+\alignsep@=\dimen110
+\tagshift@=\dimen111
+\tagwidth@=\dimen112
+\totwidth@=\dimen113
+\lineht@=\dimen114
 \@envbody=\toks18
 \multlinegap=\skip48
 \multlinetaggap=\skip49
@@ -203,43 +231,186 @@ Package: amsthm 2009/07/02 v2.20.1
 (./assignment_1.aux)
 \openout1 = `assignment_1.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Try loading font information for T1+cmss on input line 50.
- (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmss.fd
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+
+(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count102
+\scratchdimen=\dimen115
+\scratchbox=\box29
+\nofMPsegments=\count103
+\nofMParguments=\count104
+\everyMPshowfont=\toks26
+\MPscratchCnt=\count105
+\MPscratchDim=\dimen116
+\MPnumerator=\count106
+\makeMPintoPDFobject=\count107
+\everyMPtoPDFconversion=\toks27
+) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+LaTeX Font Info:    Try loading font information for T1+cmss on input line 51.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmss.fd
 File: t1cmss.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 50.
+LaTeX Font Info:    Try loading font information for U+msa on input line 51.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 50.
+LaTeX Font Info:    Try loading font information for U+msb on input line 51.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 ) [1
 
 
-] [2] [3]
-(./assignment_1.aux) ) 
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+<../images/1.jpg, id=19, 642.4pt x 364.36125pt>
+File: ../images/1.jpg Graphic file (type jpg)
+ <use ../images/1.jpg>
+Package pdftex.def Info: ../images/1.jpg used on input line 84.
+(pdftex.def)             Requested size: 150.49352pt x 85.35826pt.
+
+<../images/resized2x.jpg, id=21, 1284.8pt x 728.7225pt>
+File: ../images/resized2x.jpg Graphic file (type jpg)
+
+<use ../images/resized2x.jpg>
+Package pdftex.def Info: ../images/resized2x.jpg used on input line 90.
+(pdftex.def)             Requested size: 150.4837pt x 85.35826pt.
+
+<../images/scvresized2x.jpg, id=23, 1284.8pt x 728.7225pt>
+File: ../images/scvresized2x.jpg Graphic file (type jpg)
+
+<use ../images/scvresized2x.jpg>
+Package pdftex.def Info: ../images/scvresized2x.jpg used on input line 91.
+(pdftex.def)             Requested size: 150.4837pt x 85.35826pt.
+
+<../images/resized3x.jpg, id=25, 1927.2pt x 1093.08376pt>
+File: ../images/resized3x.jpg Graphic file (type jpg)
+
+<use ../images/resized3x.jpg>
+Package pdftex.def Info: ../images/resized3x.jpg used on input line 92.
+(pdftex.def)             Requested size: 150.4739pt x 85.35826pt.
+
+<../images/scvresized3x.jpg, id=27, 3212.0pt x 1821.80624pt>
+File: ../images/scvresized3x.jpg Graphic file (type jpg)
+
+<use ../images/scvresized3x.jpg>
+Package pdftex.def Info: ../images/scvresized3x.jpg used on input line 93.
+(pdftex.def)             Requested size: 150.46411pt x 85.35826pt.
+ [2 <../images/1.jpg> <../images/resized2x.jpg> <../images/scvresized2x.jpg> <.
+./images/resized3x.jpg> <../images/scvresized3x.jpg>] <../images/rotate40.jpg, 
+id=38, 642.4pt x 364.36125pt>
+File: ../images/rotate40.jpg Graphic file (type jpg)
+
+<use ../images/rotate40.jpg>
+Package pdftex.def Info: ../images/rotate40.jpg used on input line 120.
+(pdftex.def)             Requested size: 150.49352pt x 85.35826pt.
+
+<../images/scvrotate40.jpg, id=40, 642.4pt x 364.36125pt>
+File: ../images/scvrotate40.jpg Graphic file (type jpg)
+
+<use ../images/scvrotate40.jpg>
+Package pdftex.def Info: ../images/scvrotate40.jpg used on input line 121.
+(pdftex.def)             Requested size: 150.49352pt x 85.35826pt.
+ [3 <../images/rotate40.jpg> <../images/scvrotate40.jpg>]
+File: ../images/1.jpg Graphic file (type jpg)
+ <use ../images/1.jpg>
+Package pdftex.def Info: ../images/1.jpg used on input line 201.
+(pdftex.def)             Requested size: 150.49352pt x 85.35826pt.
+
+<../images/Fisheye01.jpg, id=49, 642.4pt x 364.36125pt>
+File: ../images/Fisheye01.jpg Graphic file (type jpg)
+
+<use ../images/Fisheye01.jpg>
+Package pdftex.def Info: ../images/Fisheye01.jpg used on input line 202.
+(pdftex.def)             Requested size: 150.49352pt x 85.35826pt.
+ [4 <../images/Fisheye01.jpg>] (./assignment_1.aux) ) 
 Here is how much of TeX's memory you used:
- 2719 strings out of 495060
- 36334 string characters out of 3182053
- 117313 words of memory out of 3000000
- 5892 multiletter control sequences out of 15000+200000
+ 4070 strings out of 495059
+ 57331 string characters out of 3182030
+ 141531 words of memory out of 3000000
+ 7172 multiletter control sequences out of 15000+200000
  18563 words of font info for 53 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 35i,10n,47p,624b,216s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 47i,10n,47p,625b,243s stack positions out of 5000i,500n,10000p,200000b,50000s
+ </home/ganesh/.texmf-var/
+fonts/pk/ljfour/jknappen/ec/ecsx1095.600pk> </home/ganesh/.texmf-var/fonts/pk/l
+jfour/jknappen/ec/ecsx1200.600pk> </home/ganesh/.texmf-var/fonts/pk/ljfour/jkna
+ppen/ec/ecsl1095.600pk> </home/ganesh/.texmf-var/fonts/pk/ljfour/jknappen/ec/ec
+sx1440.600pk> </home/ganesh/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1095.600
+pk> </home/ganesh/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1440.600pk> </home
+/ganesh/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm2074.600pk> </home/ganesh/.t
+exmf-var/fonts/pk/ljfour/jknappen/ec/eccc1095.600pk></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on assignment_1.pdf (4 pages, 1440147 bytes).
+PDF statistics:
+ 318 PDF objects out of 1000 (max. 8388607)
+ 78 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 95 words of extra memory for PDF output out of 10000 (max. 10000000)
 
-Output written on assignment_1.dvi (3 pages, 8828 bytes).

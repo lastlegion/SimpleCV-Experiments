@@ -16,4 +16,4 @@ def myrotate(I, angle):
     return T
 I = Image.open("1.jpg")
 I.rotate(40).show()
-myrotate(I,40).show()
+myrotate(I,40).save("images/rotate40.jpg")

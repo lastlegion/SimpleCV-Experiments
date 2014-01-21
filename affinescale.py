@@ -14,4 +14,4 @@ def affinescale(image, scale = None):
     return image.transform(image.size, Image.AFFINE, (a,b,c,d,e,f), resample=Image.BICUBIC)
 
 I = Image.open("1.jpg")
-affinescale(I, [2,2]).show()
+affinescale(I, [3,3]).save("images/resizedaff3x.jpg")
