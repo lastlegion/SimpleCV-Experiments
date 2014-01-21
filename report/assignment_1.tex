@@ -3,12 +3,12 @@
 %----------------------------------------------------------------------------------------
 
 \documentclass[paper=a4, fontsize=11pt]{scrartcl} % A4 paper and 11pt font size
-
+\usepackage{graphicx} %For inserting pictures
 \usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
 \usepackage[english]{babel} % English language/hyphenation
 \usepackage{amsmath,amsfonts,amsthm} % Math packages
 
-\allsectionsfont{\centering \normalfont\scshape} % Make all sections centered, the default font and small caps
+%\allsectionsfont{\centering \normalfont\scshape} % Make all sections centered, the default font and small caps
 
 \usepackage{fancyhdr} % Custom headers and footers
 \pagestyle{fancyplain} % Makes all pages in the document conform to the custom headers and footers
@@ -40,7 +40,7 @@
 \horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
 }
 
-\author{Ganesh Iyer} % Your name
+\author{Ganesh Iyer \\ 201311019} % Your name
 
 \date{\normalsize\today} % Today's date or a custom date
 
@@ -54,73 +54,125 @@
 
 \section{Image Resize}
 
-\lipsum[2] % Dummy text
-
-\begin{align} 
-\begin{split}
-(x+y)^3 	&= (x+y)^2(x+y)\\
-&=(x^2+2xy+y^2)(x+y)\\
-&=(x^3+2x^2y+xy^2) + (x^2y+2xy^2+y^3)\\
-&=x^3+3x^2y+3xy^2+y^3
-\end{split}					
-\end{align}
-
-Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies
+In this problem I wrote a function that resizes an image to the given size \((M,N)\). We want to find a map such that for each \(P(x,y)\) belonging to \(I\), we get correspoding \(P'(x',y')\) in \(I'\). We define the notion of \textsl{Scaling Factor} \(S_x = M/ImageWidth\) and \(S_y = N/ImageHeight\). If \(I'\) were continuous we would have had \(x' = S_x*x\) and \(y' = S_y*y\) \(\forall x,y \in I\). In this excercise we acheived this effect by (1) Individually applying the transformation and then resapmling it and (2)Using built-in functions for performing Affine Transformations
+wrote a program to resample (x',y') from Real space to Integer space. We implemented the Nearest neighbor with pixel replication algorithm to do the same. 
 
 %------------------------------------------------
 
-\subsection{Heading on level 2 (subsection)}
+\subsection{Nearest neighbor with pixel replication}
 
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
-\begin{align}
-A = 
-\begin{bmatrix}
-A_{11} & A_{21} \\
-A_{21} & A_{22}
-\end{bmatrix}
-\end{align}
-Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+In this exercise the tranformation \(x' = S_x*x\) and \(y' = S_y*x\) was applied \(\forall x,y \in I\) . We then resample the new coordinates \(x'\) and \(y'\) using  nearest neighbor method with pixel replication. 
+Using nearest neighbor with pixel replication, We simply copy the intensity values, For all \((x', y')\) in \(I'\), to that of its nearest neighbor to the corresponding \((x,y)\) in \(I\).
 
 %------------------------------------------------
 
-\subsubsection{Heading on level 3 (subsubsection)}
+\subsubsection{Using Affine Transforms}
 
-\lipsum[3] % Dummy text
+We can also scale images using the built-in functions available for performing affine transformations. These functions also provide a choise of the interpolating algorithm such as: Bilinear, Bicubic etc. We performed experiments with these algorithms, the results of which are reported in the subsequent sub-section. For scaling we used the following transformation matrix:
 
-\paragraph{Heading on level 4 (paragraph)}
-
-\lipsum[6] % Dummy text
+\(
+  T = 
+  \begin{pmatrix}
+    S_x && 1 && 0 \\
+    1 && S_y && 0 \\
+    0 && 0 && 1
+  \end{pmatrix}
+\) 
 
 %----------------------------------------------------------------------------------------
 %	PROBLEM 2
 %----------------------------------------------------------------------------------------
 
-\section{Lists}
+\section{Image rotation}
+
+In this exercise, given an input image(\(I)\) and angle(\(\theta\)), we had to generate an output Image(\(I')\)) which is the result of rotating \(I\) by an angle \(\theta\) about the centre of the image. For this we used an affine transformation, with transformation matrix:
+
+\(
+  T = 
+  \begin{pmatrix}
+    \cos(\theta) && \sin(\theta) && cx(1-\cos(\theta)) - cy(\sin(\theta)) \\
+    -\sin(\theta) && \cos(\theta) && cy(1 - \cos(\theta)) + cx(\sin(\theta)) \\
+    0 && 0 && 1
+  \end{pmatrix}
+\) 
+
+We use the Bicubic interpolation with this transformation
+
+
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 3
+%----------------------------------------------------------------------------------------
+
+\section{Affine Trasformation}
+
+Given the corner vectors of input image, \(p_{in}^k = (x_k,y_k,1), 0 \leq k \leq 3\). We want to map this to the region enclosed by \(p_{op}^k = (u_k,v_k,1), 0 \leq k \leq 3 \). In this excercise we derive the number of such corner points that are required to uniquely define the affine transformation. Also we develop a function to generate the transformation matrix from the required number of points.
 
 %------------------------------------------------
 
-\subsection{Example of list (3*itemize)}
-\begin{itemize}
-	\item First item in a list 
-		\begin{itemize}
-		\item First item in a list 
-			\begin{itemize}
-			\item First item in a list 
-			\item Second item in a list 
-			\end{itemize}
-		\item Second item in a list 
-		\end{itemize}
-	\item Second item in a list 
-\end{itemize}
+\subsection{Number of points required to define the affine transformation}
 
+A generic affine transformation matrix is of the form
+\(
+  T = 
+  \begin{pmatrix}
+    a && b && c\\
+    d && e && f\\
+    0 && 0 && 1
+  \end{pmatrix}
+\) 
+
+Now from \(p_{op}^k = T*_{in}^k\)\\
+We have equations of the form \\
+\(u_i = ax_i + by_i + c\) and\\
+\(v_i = dx_i + ey_i + f\)\\
+Both of them are equations with 3 variables thus we just need 3 points to solve this system of equations. Thus only 3 corner points are required to determine the transformation.
+
+Also for a unique solution
+\(
+  \delta = 
+  \begin{vmatrix}
+    x_1 && y_1 && 1 \\
+    x_2 && y_2 && 1 \\
+    0 && 0 && 1
+  \end{vmatrix} 
+  \neq 0
+\)
+
+
+
+\subsection{Function to generate the transformation matrix}
+
+Given 3 corner points \(p_{in}^k = (x_k,y_k,1), 0 \leq k \leq 2\) and their corresponding ouput points \(p_{out}^k = (u_k,v_k,1), 0 \leq k \leq 2\). We need to find values of \(a,b,c,d,e,f\) to find out the transformation matrix. We can represent the system of equations in matrix form as:
+
+\(Ax = u\)
+
+where \( A =
+        \begin{pmatrix}
+          x_1 && y_1 && 1\\
+          x_2 && y_2 && 1\\
+          x_3 && y_3 && 1  
+        \end{pmatrix}
+      \) , \(x = \begin{pmatrix} a\\ b\\ c \end{pmatrix}\) and \(u = \begin{pmatrix} u_1\\ u_2\\ u_3 \end{pmatrix}\)
+Solving this using Cramer's rule we get values of \(a, b and c\)
+Similary we can solve
+\(Bx = v\) 
+to find \(e,f and g\)
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 4 
+%----------------------------------------------------------------------------------------
+
+\section{Fisheye effect}
+
+In this exercies we generated images with Fisheye effect. We apply the following transformation to each pixel \((x,y)\) in the image
+
+\(x_d = x_c + \frac{x - x_c}{1 + k(\frac{r}{r_{max}}}) \)\\
+\(y_d = y_c + \frac{y - y_c}{1 + k(\frac{r}{r_{max}}}) \)
+
+Where \((x_d, y_d), (x_c, y_c)\) are the coordinates of distorted image and original Image respectively, \((x_c,y_c)\) are the coordinates of distortion center(which is the image center), \(r\) is the Eucledian distance between \((x_d, y_d)\) and \((x_c, y_c)\) and \(k \in \mathbb{R}\) .
 %------------------------------------------------
-
-\subsection{Example of list (enumerate)}
-\begin{enumerate}
-\item First item in a list 
-\item Second item in a list 
-\item Third item in a list
-\end{enumerate}
 
 %----------------------------------------------------------------------------------------
 

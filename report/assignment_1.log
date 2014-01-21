@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=latex 2014.1.21)  21 JAN 2014 16:49
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=latex 2014.1.21)  22 JAN 2014 00:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -189,11 +189,6 @@ Package: amsthm 2009/07/02 v2.20.1
 \thm@headsep=\skip52
 \dth@everypar=\toks25
 )
-! Undefined control sequence.
-l.11 \allsectionsfont
-                     {\centering \normalfont\scshape} % Make all sections ce...
-
-? 
 (/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 \fancy@headwidth=\skip53
 \f@ncyO@elh=\skip54
@@ -205,7 +200,7 @@ l.11 \allsectionsfont
 \f@ncyO@olf=\skip60
 \f@ncyO@orf=\skip61
 )
-No file assignment_1.aux.
+(./assignment_1.aux)
 \openout1 = `assignment_1.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 47.
@@ -221,7 +216,7 @@ LaTeX Font Info:    ... okay on input line 47.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 47.
 LaTeX Font Info:    ... okay on input line 47.
 LaTeX Font Info:    Try loading font information for T1+cmss on input line 50.
-(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmss.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmss.fd
 File: t1cmss.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Try loading font information for U+msa on input line 50.
@@ -233,39 +228,18 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 50.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
-)
-! Undefined control sequence.
-l.57 \lipsum
-            [2] % Dummy text
-? 
-! Undefined control sequence.
-l.88 \lipsum
-            [3] % Dummy text
-? 
-! Undefined control sequence.
-l.92 \lipsum
-            [6] % Dummy text
-? 
-[1
+) [1
 
 
-]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 104.
-
- (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 104.
- [2]
+] [2] [3]
 (./assignment_1.aux) ) 
 Here is how much of TeX's memory you used:
- 2738 strings out of 495060
- 36666 string characters out of 3182053
- 114313 words of memory out of 3000000
- 5910 multiletter control sequences out of 15000+200000
- 18520 words of font info for 53 fonts, out of 3000000 for 9000
+ 2719 strings out of 495060
+ 36334 string characters out of 3182053
+ 117313 words of memory out of 3000000
+ 5892 multiletter control sequences out of 15000+200000
+ 18563 words of font info for 53 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 35i,14n,47p,226b,210s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 35i,10n,47p,624b,216s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on assignment_1.dvi (2 pages, 3028 bytes).
+Output written on assignment_1.dvi (3 pages, 8828 bytes).
