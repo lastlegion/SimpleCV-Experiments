@@ -55,45 +55,60 @@
 
 \section{Image Resize}
 
-In this problem I wrote a function that resizes an image to the given size \((M,N)\). We want to find a map such that for each \(P(x,y)\) belonging to \(I\), we get corresponding \(P'(x',y')\) in \(I'\). We define the notion of \textsl{Scaling Factor} \(S_x = M/ImageWidth\) and \(S_y = N/ImageHeight\). If \(I'\) were continuous we would have had \(x' = S_x*x\) and \(y' = S_y*y\) \(\forall x,y \in I\). In this exercise we achieved this effect by (1) Individually applying the transformation and then resampling it and (2)Using built-in functions for performing Affine Transformations.
-%------------------------------------------------
+In this problem I wrote a function that resizes an image to the given size \((M,N)\). We want to find a map such that for each \(P(x,y)\) belonging to \(I\), we get corresponding \(P'(x',y')\) in \(I'\). We define the notion of \textsl{Scaling Factors:}\\ \(S_x = M/ImageWidth\) and \\\(S_y = N/ImageHeight\). If \(I'\) were continuous we would have had \(x' = S_x*x\) and \(y' = S_y*y\) \(\forall x,y \in I\). In this exercise we achieved this effect by (1) Individually applying the transformation and then resampling it and (2)Using built-in functions for performing Affine Transformations.
+    %------------------------------------------------
 
-\subsection{Nearest neighbor with pixel replication}
+    \subsection{Nearest neighbor with pixel replication}
+    \label{sec:pixelrep}
+    Nearest neighbor with pixel replication was implemented for this exercise. The transformation \(x' = S_x*x\) and \(y' = S_y*x\) was applied \(\forall x,y \in I\). We then resample the new coordinates \(x'\) and \(y'\) using  nearest neighbor method with pixel replication. 
+    Using nearest neighbor with pixel replication, We simply copy the intensity values, For all \((x', y')\) in \(I'\), to that of its nearest neighbor to the corresponding \((x,y)\) in \(I\). 
+    
+    %------------------------------------------------
+    \subsection{Using Affine Transformation Matrix}
 
-Nearest neighbor with pixel replication was implemented for this exercise. The transformation \(x' = S_x*x\) and \(y' = S_y*x\) was applied \(\forall x,y \in I\). We then resample the new coordinates \(x'\) and \(y'\) using  nearest neighbor method with pixel replication. 
-Using nearest neighbor with pixel replication, We simply copy the intensity values, For all \((x', y')\) in \(I'\), to that of its nearest neighbor to the corresponding \((x,y)\) in \(I\). 
+    We can also scale images using the built-in functions available for performing affine transformations. These functions also provide a choice of the interpolating algorithm such as: Bilinear, Bicubic etc. We performed experiments with these algorithms, the results of which are reported in the subsequent sub-section. For scaling we used the following transformation matrix.
+    \(
+      T = 
+      \begin{pmatrix}
+        S_x && 1 && 0 \\
+        1 && S_y && 0 \\
+        0 && 0 && 1
+      \end{pmatrix}
+    \) 
 
-%------------------------------------------------
 
-\subsubsection{Using Affine Transforms}
+        %----------------------------------
+    \subsection{Bilinear Interpolation}
 
-We can also scale images using the built-in functions available for performing affine transformations. These functions also provide a choice of the interpolating algorithm such as: Bilinear, Bicubic etc. We performed experiments with these algorithms, the results of which are reported in the subsequent sub-section. For scaling we used the following transformation matrix:
+    In section \ref{sec:pixelrep} we used pixel replication for interpolation, we also implemented Bilinear Interpolation that was used after the affine transformation to get the resized image. This interpolation is also used in the subsequent transformations.
 
-\(
-  T = 
-  \begin{pmatrix}
-    S_x && 1 && 0 \\
-    1 && S_y && 0 \\
-    0 && 0 && 1
-  \end{pmatrix}
-\) 
+    To find the intensity value at a point \(P(x,y)\) in \(I\) we consider the 4 nearest neighbors of that point: 
+    \(Q_{11}(x_1,y_1)\), \(Q_{21}(x_2,y_1)\), \(Q_{22}(x_2,y_2)\), \(Q_{12}(x_1,y_2)\).
+    \\Now\\
+    \(
+        f(R1) = \frac{x_2-x}{x_2-x_1}f(Q_{11}) + \frac{x-x_1}{x_2-x_1}f(Q_{12})
+        \\
+        f(R2) = \frac{x_2-x}{x_2-x_1}f(Q_{21}) + \frac{x-x_1}{x_2-x_1}f(Q_{22})
+        \\
+        f(x,y) = \frac{y_2-y}{y_2-y_1}f(R2) + \frac{y-y_1}{y_2-y_y1}f(R1)
+    \)
 
-\subsection{Results}
-  \begin{figure}[h!]
-    \centering
-    \includegraphics[clip,height=3cm]{1}
-    \caption{Original image}
-  \end{figure}
+    \subsection{Results}
+      \begin{figure}[h!]
+        \centering
+        \includegraphics[clip,height=3cm]{1}
+        \caption{Original image, upon which various transforms are applied throughout the report.}
+      \end{figure}
 
-  \begin{figure}[h!]   
-    \centering
-    \includegraphics[clip,height=3cm]{resized2x}
-    \includegraphics[clip,height=3cm]{scvresized2x}
-    \includegraphics[clip,height=3cm]{resized3x}
-    \includegraphics[clip,height=3cm]{scvresized3x}
-    \caption{Clockwise from topleft: Image scaled 2 times using myresize, scaled 2x using built-in function, 3x using myresize, 3x using built-in function. Please note these results have been resized again to fit the document. For seeing the original effect please refer to the images folder}
-  \end{figure}
-  
+      \begin{figure} 
+        \centering
+        \includegraphics[clip,height=3cm]{resizedpixelrep4x}
+        \includegraphics[clip,height=3cm]{resized4x}
+        \includegraphics[clip,height=3cm]{scvresized4x}
+        \caption{Image scaled up 4x times using myresize with Pixel replication,  Bilinear interpolation and built-in function with Bicubic interpolation. For these experiments the origial image was scaled down using GNU Gimp to 200x113px. Please note these results have been resized again to fit the document. For seeing the original effect please refer to the images folder}
+        \label{fig:resizeResults}
+      \end{figure}
+      We observe (Fig ~\ref{fig:resizeResults}) some jagged artifacts around the edges in the images obtained from using our resize function. These artifacts are most prominant in the pixel replication method. Bilinear interpolation gives a better resul. The built-in functions used Bicubic interpolation which seems to be giving best results.
 %----------------------------------------------------------------------------------------
 %	PROBLEM 2
 %----------------------------------------------------------------------------------------
@@ -111,7 +126,7 @@ In this exercise, given an input image(\(I)\) and angle(\(\theta\)), we had to g
   \end{pmatrix}
 \) 
 where \((c_x,c_y)\) are the coordinates of the center of the Image.\\
-We use the Bicubic interpolation with this transformation
+We use the Bilinear interpolation with this transformation
 
 
 \subsection{Results}
@@ -177,9 +192,11 @@ where \( A =
           x_3 && y_3 && 1  
         \end{pmatrix}
       \) , \(x = \begin{pmatrix} a\\ b\\ c \end{pmatrix}\) and \(u = \begin{pmatrix} u_1\\ u_2\\ u_3 \end{pmatrix}\)
-Solving this using Cramer's rule we get values of \(a, b\) and \(c\)
-Similary we can solve
-\(Bx = v\) to find \(e,f\) and \(g\)
+\\Solving this using Cramer's rule we get values of \(a, b\) and \(c\)
+\\Similary we can solve
+\\\(Bx = v\) to find \(d,e\) and \(f\)
+
+We then apply this transformation to the given Image to generate the output and use bilinear interpolation. 
 
 %----------------------------------------------------------------------------------------
 %	PROBLEM 4 

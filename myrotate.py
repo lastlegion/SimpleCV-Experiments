@@ -1,3 +1,7 @@
+#Usage: 
+#   python myrotate.py
+#Rotates the image file "1.jpg" by angle 40
+#Output "newrot.jpg"
 import SimpleCV
 import numpy as np
 import math
@@ -65,27 +69,10 @@ def myrotate(I, angle):
             y = P_[1].min()
             Rotated[i,j] = bilinear(x,y,Inp)
     print Rotated    
-    return Rotated.transpose([1,0,2])
+    return np.uint8(Rotated.transpose([1,0,2]))
 
-
-'''
-def myrotate(I, angle):
-    angle = -angle/180.0*math.pi
-    cosx = math.cos(angle)
-    sinx = math.sin(angle)
-    nx,ny = x,y = [I.size[0]/2, I.size[1]/2]
-    a = cosx
-    b = sinx
-    c = x-nx*a-ny*b
-    d = -sinx
-    e = cosx
-    f = y-nx*d-ny*e
- 
-    T = I.transform(I.size, Image.AFFINE, (a,b,c,d,e,f), resample=Image.BICUBIC)
-    return T
-'''
 
 I = SimpleCV.Image("1.jpg")
 #I.rotate(40).show()
-Image.fromarray(np.uint8(myrotate(I,40))).save("newrot.jpg")
+Image.fromarray((myrotate(I,40))).save("newrot.jpg")
 #myrotate(I,40).save("images/rotate40.jpg")

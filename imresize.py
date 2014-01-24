@@ -1,3 +1,7 @@
+#Usage: python myresize.py <image> <width> <height>
+#Output: images/resized.jpg
+ 
+
 from __future__ import division
 import SimpleCV 
 import numpy as np
@@ -17,35 +21,6 @@ def myresize(I,M,N,method):
                 py = min(math.floor(y*y_ratio), InpHeight-1)
                 Resize[x,y] = Inp[px,py]
     elif method == "bilinear":
-        '''
-        for i in range(1,M):
-            for j in range(1,N):
-                x = i*x_ratio
-                y = j*y_ratio
-                y2 = int(max(math.ceil(x), 1))
-                x2 = int(max(math.ceil(y), 1))
-                y1 = int(min(math.floor(x), InpWidth -1))
-                x1 = int(min(math.floor(y), InpHeight -1))
-                print str(x) +"\t"+ str(y) +"\t"+str(x1) +"\t"+str(y1) +"\t"+str(x2) +"\t"+ str(y2) 
-                Irval = (1/float((x2-x1)*(y2-y1)))*\
-                        ((I[x1,y1][0]*float(x2-x)*float(y2-y)) + \
-                        (I[x2,y1][0]*(x-x1)(y2-y1)) + \
-                        (I[x1,y2][0]*(x2-x)*(y-y1)) + \
-                        (I[x2,y2][0]*(x-x1)*(y-y1)))
-                Igval = (1/(x2-x1)*(y2-y1))*\
-                        (
-                        (I[x1,y1][1]*(x2-x)*(y2-y)) + \
-                        I[x2,y1][1]*(x-x1)(y2-y1) + \
-                        I[x1,y2][1]*(x2-x)*(y-y1) + \
-                        I[x2,y2][1]*(x-x1)*(y-y1))
-                Ibval = (1/(x2-x1)*(y2-y1))*\
-                        (
-                        (I[x1,y1][2]*(x2-x)*(y2-y)) + \
-                        I[x2,y1][2]*(x-x1)(y2-y1) + \
-                        I[x1,y2][2]*(x2-x)*(y-y1) + \
-                        I[x2,y2][2]*(x-x1)*(y-y1))
-                Resized[i,j] = [Irval, Igval, Ibval]
-            '''
         Inp = I.getNumpy()
         for i in range(0,M):
             x = i*x_ratio
@@ -85,4 +60,4 @@ a = SimpleCV.Image((myresize(I,int(sys.argv[2]), int(sys.argv[3]), "bilinear")))
 I.show()
 a.show()
 a.save("images/resized.jpg")
-wait = input("press any key to exit")
+#wait = input("press any key to exit")
